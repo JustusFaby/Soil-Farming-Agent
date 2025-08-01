@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Soil Farming Agent</title>
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" type="image/png" href="icons8-soil-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Michroma&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="icons8-soil-32.png" alt="Soil Icon" width="50" height="50" />
+      <span>Soil Farming Agent</span>
+    </div>
+    <nav id="navigation">
+      <a href="#" data-section="home">Home</a>
+      <a href="#" data-section="contact">Contact</a>
+      <a href="#" id="authLink" data-section="role">Login</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section">
+    <div class="box">
+      <h2>Welcome to Soil Farming Agent</h2>
+      <p>
+        Assess soil quality, get crop recommendations and sustainable farming tips in one place.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section hidden">
+    <div class="box">
+      <h2>Contact Us</h2>
+      <p><strong>Email:</strong> justusfaby@gmail.com</p>
+      <p><strong>Phone:</strong> +91 88700 99067</p>
+      <p><strong>Address:</strong> 18/5, Royal Garden, Kuniyamuthur, Coimbatore, Tamil Nadu, India</p>
+    </div>
+  </section>
+
+  <!-- Role Selection -->
+  <section id="role" class="section hidden">
+    <div class="box">
+      <h2>Login As</h2>
+      <div class="roles">
+        <button id="chooseAdmin">👮 Admin</button>
+        <button id="chooseUser">👤 User</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Form -->
+  <section id="loginForm" class="section hidden">
+    <div class="box">
+      <h2 id="loginTitle">Login</h2>
+      <input id="email" type="email" placeholder="Email" required />
+      <input id="password" type="password" placeholder="Password" required />
+      <button id="loginBtn">Login</button>
+      <div class="link" id="showRegister">Create an account</div>
+    </div>
+  </section>
+
+  <!-- Register Form -->
+  <section id="registerForm" class="section hidden">
+    <div class="box">
+      <h2>Create Account</h2>
+      <input id="regEmail" type="email" placeholder="Email" required />
+      <input id="regPassword" type="password" placeholder="Password" required />
+      <button id="registerBtn">Register</button>
+      <div class="link" id="showLogin">Already have an account? Login</div>
+    </div>
+  </section>
+
+  <!-- Admin Dashboard -->
+  <section id="adminDashboard" class="section hidden">
+    <div class="list-container">
+  <h3>User Selections for Soil Types</h3>
+  <ul id="userSelectionsList"></ul>
+</div>
+
+    <div class="box">
+      <h2>Admin Dashboard</h2>
+      <form id="soilForm" class="form-container">
+        <label>Soil Type: <input id="soilType" required /></label>
+        <label>Distributor Name: <input id="distributorName" required /></label>
+        <label>Distributor Location: <input id="distributorLocation" required /></label>
+        <label>Distributor Phone: <input id="distributorPhone" required pattern="[0-9]{10,15}" /></label>
+        <button type="submit">Add Soil Detail</button>
+      </form>
+      <div class="list-container">
+        <h3>Added Soil Details</h3>
+        <ul id="soilDetailsList"></ul>
+      </div>
+      <button id="adminLogout">Logout</button>
+    </div>
+  </section>
+
+  <!-- User Dashboard -->
+  <section id="userDashboard" class="section hidden">
+    <div class="box">
+      <h2>User Dashboard</h2>
+      <div class="list-container">
+        <h3>Select Soil Type</h3>
+        <div id="soilOptions"></div>
+      </div>
+      <button id="submitSelection">Submit Selection</button>
+      <button id="userLogout">Logout</button>
+    </div>
+  </section>
+
+  <!-- App Script (Firebase, Logic) -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
